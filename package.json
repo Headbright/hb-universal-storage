@@ -8,6 +8,9 @@
   "module": "./dist/library.esm.js",
   "author": "Headbright Group <info@headbright.be> (https://www.headbright.eu/)",
   "license": "BSD-3",
+  "repository": {
+    "url": "https://github.com/Headbright/hb-universal-storage"
+  },
   "devDependencies": {
     "@babel/core": "^7.7.7",
     "@babel/preset-env": "^7.7.7",
