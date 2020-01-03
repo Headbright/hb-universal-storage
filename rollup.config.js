@@ -25,4 +25,24 @@ export default [
         ],
         external: ['vue', 'cookie', 'dotprop']
     },
+    {
+        input: 'src/index.js',
+        output: {
+            format: 'cjs',
+            file: pkg.main
+        },
+        plugins: [
+            resolve(),
+            commonjs(),
+            babel({
+                exclude: "node_modules/**",
+                "presets": [
+                    ["@babel/preset-env", {
+                        "targets": "> 0.25%, not dead, ie >= 10"
+                    }]
+                ]
+            }),
+        ],
+        external: ['vue', 'cookie', 'dotprop']
+    },
 ]

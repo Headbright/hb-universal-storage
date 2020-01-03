@@ -1,11 +1,12 @@
 {
   "name": "@headbright/hb-universal-storage",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A universal storage library for Nuxt projects with IE and Safari 10 support.",
   "scripts": {
     "build": "rollup -c --environment BUILD:production"
   },
-  "module": "./dist/library.esm.js",
+  "main": "./dist/lib.js",
+  "module": "./dist/lib.esm.js",
   "author": "Headbright Group <info@headbright.be> (https://www.headbright.eu/)",
   "license": "BSD-3",
   "repository": {
@@ -24,5 +25,6 @@
     "cookie": "^0.4.0",
     "dotprop": "^1.2.0",
     "vue": "^2.6.11"
-  }
+  },
+  "files": ["dist"]
 }
