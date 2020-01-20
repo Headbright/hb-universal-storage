@@ -9,29 +9,43 @@ The project is based on the equivalent [nuxt community module](https://github.co
 
 1. `npm i --save @headbright/hb-universal-storage`
 
-1. Create a nuxt plugin:
+1. Create a nuxt plugin and inject the storage helper so it is available for use in other parts of the application via this.$storage.
+
+`plugins/universal-storage.js`:
 
 ```
-import Storage from 'hb-universal-storage'
+import Storage from "@headbright/hb-universal-storage";
 
 export default function(ctx, inject) {
   const options = {
     vuex: {
-      namespace: 'storage'
+      namespace: "storage"
     },
     cookie: {
-      prefix: '',
+      prefix: "",
       options: {
-        path: '/'
+        path: "/"
       }
     },
     localStorage: {
-      prefix: ''
+      prefix: ""
     },
     ignoreExceptions: false
-  }
-  const storage = new Storage(ctx, options)
-  ctx.$storage = storage
-  inject('storage', storage)
+  };
+  const storage = new Storage(ctx, options);
+  ctx.$storage = storage;
+  inject("storage", storage);
 }
 ```
+
+1. Register the new Nuxt plugin so it's executed as early as possible in the lifecycle of the app:
+
+`nuxt.config.js`
+
+```
+plugins: [
+    '@/plugins/universal-storage.js',
+  ],
+```
+
+[Official Nuxt Docs](https://nuxtjs.org/guide/plugins/)
