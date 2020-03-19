@@ -1,6 +1,6 @@
 {
   "name": "@headbright/hb-universal-storage",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A universal storage library for Nuxt projects with IE and Safari 10 support.",
   "scripts": {
     "build": "rollup -c --environment BUILD:production"
